@@ -1,0 +1,248 @@
+﻿//
+// Custom PingColor Styles
+// --
+
+@import "variables.less";
+@import "mixins.less";
+@import "glyphicons.less";
+@import "colors.less";
+
+// ************ NAVIGATION ***************
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+nav#top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    .nav-side {
+        background: rgba(000, 000, 000, 0.4);
+        height: 50px;
+        position: absolute;
+        top: 0;
+        border-bottom: rgba(244, 244, 244, 0.25) solid 1px;
+
+        ul {
+            margin: 0;
+            width: 100%;
+
+            li {
+                line-height: 40px;
+
+                a {
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    margin: 10px 0;
+                    color: @gray;
+                    font-size: 18px;
+
+                    &:hover {
+                        color: @gray-lighter;
+                    }
+                }
+            }
+        }
+    }
+
+    #nav-left {
+        left: 0;
+        right: 50%;
+        margin-right: 80px;
+
+        li {
+            float: right;
+            padding: 5px 10px 5px 0;
+        }
+    }
+
+    #nav-right {
+        right: 0;
+        left: 50%;
+        margin-left: 80px;
+
+        li {
+            float: left;
+            padding: 5px 0 5px 10px;
+        }
+    }
+}
+
+#create-ping-container.create-ping-open {
+    h1#create-ping {
+        background: rgba(34, 34, 34, 0);
+        .transition(background .6s ease-in-out);
+
+        img {
+            opacity:0;
+            .transition(opacity .6s ease-in-out);
+        }
+
+        .create-pingbutton-hoveroff {
+            .rotate(45deg);
+        }
+
+        &:hover {
+            background: rgba(34, 34, 34, 0.2);
+
+            .create-pingbutton-hoveron {
+                display: none;
+            }
+
+            .create-pingbutton-hoveroff {
+                display: block;
+            }
+        }
+    }
+}
+
+#create-ping-container {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    margin: 0 0 0 -80px;
+    border-top: 5.5px rgba(000, 000, 000, 0.4) solid;
+    top: 0;
+    left: 50%;
+    background: url('../Images/create-ping-surround.svg') no-repeat top center;
+    .background-size(160px, 45.3333px);
+    display: block;
+    z-index: 110;
+
+    h1#create-ping {
+        width: 160px;
+        height: 160px;
+        background: rgba(34, 34, 34, .4);
+        .border-radius(100px);
+        cursor: pointer;
+        .transition(background .6s ease-in-out);
+        position: relative;
+        margin: 4px auto 0 auto;
+
+        img {
+            width: 150px;
+            height: 150px;
+            margin: 6px 4px 0 6px;
+        }
+
+
+        span {
+            font-size: 50px;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 50px;
+            width: 50px;
+            margin: -25px 0 0 -25px;
+            font-family: trebuchet;
+        }
+
+        .create-pingbutton-hoveron {
+            display: none;
+            font-size: 13px;
+            font-family: @font-family-sans-serif;
+            line-height: 20px;
+            margin: -15px 0 0 -35px;
+            letter-spacing: @letter-spacing-sans-serif;
+            width: 70px;
+        }
+
+        &:hover {
+            background: rgba(34, 34, 34, .9);
+            .transition(background .6s ease-in-out);
+
+            .create-pingbutton-hoveron {
+                display: block;
+            }
+
+            .create-pingbutton-hoveroff {
+                display: none;
+            }
+        }
+    }
+}
+
+
+// RESPONSIVE NAVIGATION
+// tablets-ish
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    #nav-left {
+        margin-right: 70px !important;
+    }
+
+    #nav-right {
+        margin-left: 70px !important;
+    }
+
+    #create-ping-container {
+        width: 140px;
+        height: 140px;
+        margin: 0 0 0 -70px;
+        .background-size(140px, 39.6666px);
+        border-top: 11.3333px rgba(000, 000, 000, 0.4) solid;
+
+        h1#create-ping {
+            width: 140px;
+            height: 140px;
+
+
+            img {
+                width: 130px;
+                height: 130px;
+                margin: 6px 4px 0 6px;
+            }
+        }
+    }
+}
+// mobile-ish
+@media all and (max-width:767px) {
+
+    .nav-side {
+        height: 40px !important;
+
+        a {
+            margin: 5px 0 !important;
+        }
+    }
+
+    #nav-left {
+        margin-right: 60px !important;
+    }
+
+    #nav-right {
+        margin-left: 60px !important;
+    }
+
+    #create-ping-container {
+        width: 120px;
+        height: 120px;
+        .background-size(120px, 33.9999px);
+        border-top: 7px rgba(000, 000, 000, 0.4) solid;
+        margin: 0 0 0 -60px;
+
+        h1#create-ping {
+            width: 120px;
+            height: 120px;
+
+
+            img {
+                width: 110px;
+                height: 110px;
+                margin: 6px 4px 0 6px;
+            }
+        }
+    }
+}

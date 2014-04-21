@@ -1,0 +1,223 @@
+﻿//
+// Custom PingColor Styles
+// --
+
+@import "variables.less";
+@import "mixins.less";
+@import "glyphicons.less";
+@import "colors.less";
+
+
+// *********** Map and map overlays **************
+
+#map {
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background: #2b2b2b;
+}
+
+#map-bubble-example {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    margin-left: -210px;
+    z-index: 20;
+}
+
+.map-bubble {
+    opacity: 0;
+    display: none;
+    width: 210px;
+    height: 210px;
+    padding: 25px;
+    .border-radius(260px);
+    .off-white-gradient;
+    .box-shadow(0 1px 3px #000);
+
+    h5 {
+        font-size: 30px;
+    }
+
+    p {
+        font-family: @font-family-serif;
+        line-height: 25px;
+    }
+
+    nav {
+        a {
+            width: 20px;
+            height: 20px;
+            font-size: 18px;
+            margin: 0 5px;
+            .darktolight;
+        }
+    }
+
+    .map-bubble-pointer {
+        width: 3px;
+        height: 30px;
+        position: absolute;
+        left: 105px;
+        top: -30px;
+        background: #fff;
+        .border-radius(15px);
+        .rotate(45deg);
+        .transform-origin(0 135px);
+    }
+}
+
+
+#graphics-panel {
+    width: 300px;
+    padding: 0 10px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background-image: -webkit-gradient( linear, right bottom, left bottom, color-stop(0, #2B2B2B), color-stop(1, rgba(244, 244, 244, 0)) );
+    background-image: -o-linear-gradient(left, #2B2B2B 40%, rgba(244, 244, 244, 0) 100%);
+    background-image: -moz-linear-gradient(left, #2B2B2B 40%, rgba(244, 244, 244, 0) 100%);
+    background-image: -webkit-linear-gradient(left, #2B2B2B 40%, rgba(244, 244, 244, 0) 100%);
+    background-image: -ms-linear-gradient(left, #2B2B2B 40%, rgba(244, 244, 244, 0) 100%);
+    background-image: linear-gradient(to left, #2B2B2B 40%, rgba(244, 244, 244, 0) 100%);
+
+    img {
+        margin: 0 auto;
+        max-width: 100%;
+        height: 100%;
+        float: left;
+    }
+
+    .graphics-more {
+        display: none;
+    }
+}
+
+    #graphics-panel.graphics-open {
+        background-image: none;
+        background: rgba(43, 43, 43, 0.9);
+
+        .graphics-more {
+            display: block;
+            height: 100%;
+
+            img {
+                margin: 150px 0 0 100px;
+                height: 500px;
+            }
+        }
+    }
+
+// Pings counter
+
+#map-filters {
+    position: fixed;
+    bottom: 50%;
+    left: 0;
+    margin-bottom: -105px;
+    z-index: 40;
+
+    .map-filter-label {
+        display: none;
+        color: #fff;
+        float: left;
+    }
+
+    ul {
+        margin: 0;
+
+        li {
+            float: left;
+            clear: left;
+            height: 60px;
+            width: 60px;
+            background-color: rgba(23, 23, 23, 0.5);
+            display: block;
+            margin: 5px 5px 0;
+            background-image: url(../Images/pingcolors-icons.png);
+            text-indent: -9999px;
+            position: relative;
+
+            .map-filter-open {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 100%;
+                background-color:rgba(244, 244, 244, .7);
+                height: 60px;
+                text-indent: 0;
+                color: #191919;
+                overflow: hidden;
+                .transitionall(right, .1s, ease-in, 0);
+
+                .map-filter-openinside {
+                    width: 200px;
+                    padding: 0 25px;
+                    line-height: 60px;
+                }
+            }
+
+            &:hover {
+                background-color: rgba(23, 23, 23, 1);
+
+                .map-filter-open {
+                    right: -250px;
+                    .transitionall(right, .3s, ease-in, 0);
+                }
+            }
+        }
+
+        #map-filter-geolocate {
+            background-position: -10px -10px;
+        }
+
+        #map-filter-time {
+            background-position: -91px -11px;
+        }
+
+        #map-filter-search {
+            background-position: -170px -10px;
+        }
+    }
+}
+
+// tablets-ish
+@media all and (min-width: 768px) and (max-width: 1024px) {
+}
+// mobile-ish
+@media all and (max-width:767px) {
+    #map-filters {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        margin-bottom: 0;
+        background: rgba(23, 23, 23, 0.8);
+         .transitionall(height, .3s, ease-in, 0);
+
+        .map-filter-label {
+            display: block;
+            padding:0 10px;
+        }
+
+        ul {
+            display: none;
+            background: rgba(23, 23, 23, 0.6);
+        }
+
+        &:hover {
+             .transitionall(height, .3s, ease-in, 0);
+            height:250px;
+            
+            ul {
+                display: block;
+            }
+        }
+    }
+
+    #graphics-panel {
+        display: none;
+    }
+}

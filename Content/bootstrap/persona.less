@@ -1,0 +1,320 @@
+﻿//
+// Custom PingColor Styles
+// --
+
+@import "variables.less";
+@import "mixins.less";
+@import "glyphicons.less";
+@import "type.less";
+
+// *********** Persona **************
+
+
+#persona-container {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 45;
+    overflow: visible;
+    .off-grey-gradient;
+
+    .persona-toggle-arrow {
+        font-size: 28px;
+        position: absolute;
+        cursor: pointer;
+        left: 50%;
+        margin-left: 120px;
+        top: 0;
+    }
+
+    .persona-open {
+        .whitetodark;
+        margin-top: -50px;
+    }
+
+    .persona-close {
+        .darktolight;
+        margin-top: 80px;
+    }
+}
+
+    #persona-container.persona-closed {
+
+        .persona-close {
+            display: none;
+        }
+    }
+
+    #persona-container.persona-open {
+
+        z-index:55;
+
+        .persona-open {
+            display: none;
+        }
+    }
+
+#persona-user-container {
+    position: absolute;
+    top: -84px;
+    left: 50%;
+    margin-left: -80px;
+    background: rgba(0, 0, 0, .5);
+    .border-radius(150px);
+    width: 160px;
+    height: 160px;
+    box-shadow: rgba(0, 0, 0, .3) 0 0 2px;
+
+    #persona-user {
+        width: 120px;
+        height: 120px;
+        .border-radius(150px);
+        overflow: hidden;
+        margin: 20px;
+    }
+}
+
+
+#persona-ping-container {
+    position: absolute;
+    top: 185px;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+}
+
+// ********* TIMELINE ********
+
+
+#timeline-container {
+    .timeline-item {
+        width: 50%;
+        height: 300px;
+        clear: both;
+        .box-sizing(border-box);
+        position: relative;
+
+        .timeline-item-entry {
+            width: 80%;
+            margin-left: 10%;
+            height: 200px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+            background: #fff;
+            position: relative;
+        }
+
+        .timeline-pingemotion {
+            position: absolute;
+            top: 100px;
+            width: 300px;
+            font-size: 30px;
+            margin-top: -15px;
+        }
+
+        .ping-emotion-icon {
+            position: absolute;
+            top: 80px;
+        }
+
+        .timeline-item-datecontainer {
+            height: 50px;
+            margin: 65px 15px;
+            background: #ccc;
+            float: left;
+            position: relative;
+
+            .timeline-item-dateday {
+                .titlefont;
+                .rotate(90deg);
+                position: absolute;
+                top: 20px;
+                left: 0;
+                font-size: 22px;
+            }
+
+            .timeline-item-datenumber {
+                font-size: 50px;
+                position: absolute;
+                top: 0;
+                left: 28px;
+            }
+
+            .timeline-item-datetime {
+                font-size: 14px;
+                letter-spacing: 2px;
+                position: absolute;
+                top: 53px;
+                left: 10px;
+                width: 60px;
+            }
+        }
+
+        .timeline-item-commentcontainer {
+            height: 100%;
+            border-left: 1px solid #ccc;
+            margin-left: 100px;
+            position: relative;
+
+            .timeline-item-comment {
+                .handwrittenfont;
+                line-height: 43px;
+                max-height: 86px;
+                overflow: hidden;
+                position: absolute;
+                top: 45px;
+                left: 20px;
+                right: 20px;
+                font-size: 13px;
+            }
+
+            .timeline-item-commentlines {
+                height: 45px;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                position: absolute;
+                top: 85px;
+                left: 0;
+                width: 100%;
+            }
+
+            .timeline-item-commentlocation {
+                background: #000;
+                padding: 2px 20px;
+                position: absolute;
+                bottom: 15px;
+
+                p {
+                    color: #fff;
+                    line-height: 30px;
+                    margin: 0;
+                }
+            }
+        }
+
+        .timeline-item-buttonscontainer {
+            position: absolute;
+            top: 0;
+
+
+            .timeline-item-button {
+                .opacity(0);
+                width: 20px;
+                height: 20px;
+                font-size: 18px;
+                margin: 15px 5px;
+                .darktolight;
+                float: left;
+                clear: left;
+                .transition(opacity .6s ease-in-out);
+            }
+        }
+
+        &:hover {
+            .timeline-item-button {
+                .opacity(1);
+                .transition(opacity .6s ease-in-out);
+            }
+        }
+    }
+
+    .timeline-item-right {
+        float: right;
+        border-left: 1px solid #ccc;
+        margin-left: -1px;
+
+        .timeline-pingemotion {
+            left: -350px;
+            text-align: right;
+        }
+
+        .timeline-item-commentlocation {
+            right: 15px;
+        }
+
+        .timeline-item-buttonscontainer {
+            right: -45px;
+        }
+
+        .ping-emotion-icon {
+            left: -25px;
+        }
+    }
+
+    .timeline-item.timeline-item-left {
+        border-right: 1px solid #ccc;
+        float: left;
+
+        .timeline-pingemotion {
+            right: -350px;
+            text-align: left;
+        }
+
+        .timeline-item-datecontainer {
+            float: right;
+            margin-right: 85px;
+        }
+
+        .timeline-item-commentcontainer {
+            border-right: 1px solid #ccc;
+            border-left: none;
+            margin-left: 0;
+            margin-right: 100px;
+        }
+
+        .timeline-item-commentlocation {
+            left: 15px;
+        }
+
+        .timeline-item-buttonscontainer {
+            left: -45px;
+        }
+
+
+        .ping-emotion-icon {
+            right: -25px;
+        }
+    }
+}
+
+
+
+// RESPONSIVE PERSONA
+
+
+
+// tablets-ish
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    #persona-user-container {
+        top: -80px;
+        margin-left: -70px;
+        width: 140px;
+        height: 140px;
+
+        #persona-user {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+// mobile-ish
+@media all and (max-width:767px) {
+
+    #persona-container {
+        display:none;
+    }
+
+    #persona-user-container {
+        top: -86px;
+        margin-left: -60px;
+        width: 120px;
+        height: 120px;
+
+        #persona-user {
+            width: 80px;
+            height: 80px;
+        }
+    }
+}
