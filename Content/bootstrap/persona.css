@@ -1114,27 +1114,27 @@ address {
   margin-left: 120px;
   top: 0;
 }
-#persona-container .persona-open {
+#persona-container .persona-open-tab {
   color: #999999;
   margin-top: -50px;
 }
-#persona-container .persona-open:hover {
+#persona-container .persona-open-tab:hover {
   color: #eeeeee;
 }
-#persona-container .persona-close {
+#persona-container .persona-close-tab {
   color: #555555;
   margin-top: 80px;
 }
-#persona-container .persona-close:hover {
+#persona-container .persona-close-tab:hover {
   color: #222222;
 }
-#persona-container.persona-closed .persona-close {
+#persona-container.persona-closed .persona-close-tab {
   display: none;
 }
 #persona-container.persona-open {
   z-index: 55;
 }
-#persona-container.persona-open .persona-open {
+#persona-container.persona-open .persona-open-tab {
   display: none;
 }
 #persona-user-container {
@@ -1356,18 +1356,20 @@ address {
   }
 }
 @media all and (max-width: 767px) {
-  #persona-container {
-    display: none;
-  }
   #persona-user-container {
     top: -86px;
     margin-left: -60px;
     width: 120px;
     height: 120px;
+    margin-top: 84px;
   }
   #persona-user-container #persona-user {
     width: 80px;
     height: 80px;
+  }
+  .persona-open-tab,
+  .persona-close-tab {
+    display: none;
   }
 }
 /*# sourceMappingURL=persona.css.map */

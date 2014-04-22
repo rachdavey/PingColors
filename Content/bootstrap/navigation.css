@@ -659,6 +659,12 @@ body {
   margin: 0;
   padding: 0;
 }
+nav#top-nav.nav-tab-persona .nav-side {
+  border-bottom: rgba(0, 0, 0, 0.9) solid 1px;
+}
+nav#top-nav.nav-tab-persona #create-ping-container {
+  background: url('../Images/create-ping-surround-dark.svg') no-repeat center top;
+}
 nav#top-nav {
   position: fixed;
   top: 0;
@@ -688,6 +694,9 @@ nav#top-nav .nav-side ul li a {
   font-size: 18px;
 }
 nav#top-nav .nav-side ul li a:hover {
+  color: #eeeeee;
+}
+nav#top-nav .nav-side ul li a.active-tab {
   color: #eeeeee;
 }
 nav#top-nav #nav-left {
@@ -740,7 +749,7 @@ nav#top-nav #nav-right li {
   border-top: 5.5px rgba(0, 0, 0, 0.4) solid;
   top: 0;
   left: 50%;
-  background: url('../Images/create-ping-surround.svg') no-repeat top center;
+  background: url('../Images/create-ping-surround.svg') no-repeat center top;
   -moz-background-size: 160px 45.3333px;
   -o-background-size: 160px 45.3333px;
   -webkit-background-size: 160px 45.3333px;
@@ -823,11 +832,14 @@ nav#top-nav #nav-right li {
   }
 }
 @media all and (max-width: 767px) {
+  nav#top-nav .nav-side ul li {
+    line-height: 40px;
+  }
+  nav#top-nav .nav-side ul li a {
+    margin: 2px 0 !important;
+  }
   .nav-side {
     height: 40px !important;
-  }
-  .nav-side a {
-    margin: 5px 0 !important;
   }
   #nav-left {
     margin-right: 60px !important;
@@ -853,6 +865,17 @@ nav#top-nav #nav-right li {
     width: 110px;
     height: 110px;
     margin: 6px 4px 0 6px;
+  }
+}
+@media all and (max-width: 1024px) {
+  nav#top-nav .nav-side ul li {
+    line-height: 40px;
+  }
+  nav#top-nav .nav-side ul li a {
+    width: 40px;
+    height: 40px;
+    margin: 7px 1px;
+    font-size: 26px;
   }
 }
 /*# sourceMappingURL=navigation.css.map */

@@ -61,9 +61,9 @@
     <nav id="top-nav">
         <div id="nav-left" class="nav-side">
             <ul class="unstyled">
-                <li><a href="#" class="glyphicon glyphicon-user tooltip-group" data-placement="bottom" title="Persona"></a></li>
-                <li><a href="index.html" class="glyphicon glyphicon-map-marker tooltip-group" data-placement="bottom" title="Maps"></a></li>
-                <li><a href="#" class="glyphicon glyphicon-signal tooltip-group" data-placement="bottom" title="Graphics"></a></li>
+                <li><a href="#" class="glyphicon glyphicon-user tooltip-group nav-persona-icon nav-icon" data-placement="bottom" title="Persona"></a></li>
+                <li><a href="index.html" class="glyphicon glyphicon-map-marker tooltip-group nav-icon active-tab" data-placement="bottom" title="Maps"></a></li>
+                <li><a href="#" class="glyphicon glyphicon-signal tooltip-group nav-icon" data-placement="bottom" title="Graphics"></a></li>
             </ul>
         </div>
 
@@ -74,9 +74,9 @@
 
         <div id="nav-right" class="nav-side">
             <ul class="unstyled">
-                <li><a href="about.html" class="glyphicon glyphicon-record tooltip-group" data-placement="bottom" title="About us"></a></li>
-                <li><a href="#" class="glyphicon glyphicon-filter tooltip-group" data-placement="bottom" title="Filter"></a></li>
-                <li><a href="#" class="glyphicon glyphicon-fullscreen tooltip-group" data-placement="bottom" title="Open"></a></li>
+                <li><a href="about.html" class="glyphicon glyphicon-record tooltip-group nav-icon" data-placement="bottom" title="About us"></a></li>
+                <li><a href="#" class="glyphicon glyphicon-filter tooltip-group nav-icon" data-placement="bottom" title="Filter"></a></li>
+                <li><a href="#" class="glyphicon glyphicon-fullscreen tooltip-group nav-icon" data-placement="bottom" title="Open"></a></li>
             </ul>
         </div>
     </nav>
@@ -161,8 +161,8 @@
             <div id="persona-user"><img src="Content/Images/ping-user-example.png" /></div>
         </section>
 
-        <p class="glyphicon glyphicon-circle-arrow-up persona-toggle-arrow persona-open"></p>
-        <p class="glyphicon glyphicon-circle-arrow-down persona-toggle-arrow persona-close"></p>
+        <p class="glyphicon glyphicon-circle-arrow-up persona-toggle-arrow persona-open-tab"></p>
+        <p class="glyphicon glyphicon-circle-arrow-down persona-toggle-arrow persona-close-tab"></p>
 
         <section id="persona-ping-container">
             <div id="timeline-container">
@@ -249,5 +249,12 @@
     <script src="scripts/jquery-1.11.0.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/custom.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            uiScripts.init();
+        });
+    </script>
+
 </body>
 </html>
