@@ -5837,6 +5837,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background: url(../Images/map-temp.jpg) no-repeat;
 }
 nav#top-nav.nav-tab-persona .nav-side {
   border-bottom: rgba(0, 0, 0, 0.9) solid 1px;
@@ -6057,6 +6058,20 @@ nav#top-nav #nav-right li {
     font-size: 26px;
   }
 }
+/*frustrated*/
+/*fearful*/
+/*great*/
+/*happy*/
+/*thankful*/
+/*hopeful*/
+/*relaxed*/
+/*contemplative*/
+/*focused*/
+/*curious*/
+/*curious*/
+/*curious*/
+/*curious*/
+/*miserable*/
 .ping-emotion-textcolor1 {
   color: #cbcc29;
 }
@@ -6073,7 +6088,7 @@ nav#top-nav #nav-right li {
   color: #15895f;
 }
 .ping-emotion-textcolor6 {
-  color: #12756b;
+  color: #1c9183;
 }
 .ping-emotion-textcolor7 {
   color: #0c81a1;
@@ -6744,10 +6759,10 @@ nav#top-nav #nav-right li {
   position: fixed;
   top: 0;
   left: 0;
-  background: url('../Images/create-ping-backdrop.jpg') no-repeat;
+  background: url('../Images/create-ping-backdrop.jpg') no-repeat #212121;
   z-index: 60;
-  opacity: 0;
-  display: none;
+  opacity: 1;
+  display: block;
 }
 #create-ping-page #create-ping-wheelcontainer {
   position: relative;
@@ -6756,28 +6771,50 @@ nav#top-nav #nav-right li {
 }
 #create-ping-page #create-ping-wheelcontainer #create-ping-wheel {
   position: absolute;
-  top: 14px;
+  top: 0;
   left: 50%;
-  margin-left: -74px;
-  width: 150px;
-  height: 150px;
-  background: url('../Images/create-ping-2.svg') no-repeat;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
+  margin-left: -90px;
+  width: 180px;
+  height: 180px;
 }
-#create-ping-page #create-ping-wheelcontainer #create-ping-wheel h2 {
-  font-size: 25px;
-  color: #fff;
-  opacity: 0;
+#create-ping-page #create-ping-wheelcontainer #create-ping-wheel .createping-wheel-image {
+  width: 100%;
+  height: 100%;
+}
+#create-ping-page #create-ping-wheelcontainer #create-ping-wheel #create-ping-question {
   position: absolute;
   margin-top: -20px;
   top: 50%;
+  left: 22%;
+  right: 22%;
+  opacity: 0;
+  height: 100px;
+}
+#create-ping-page #create-ping-wheelcontainer #create-ping-wheel #create-ping-question #create-ping-typeofping {
+  padding: 0 10px;
+  height: 60px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+#create-ping-page #create-ping-wheelcontainer #create-ping-wheel #create-ping-question #create-ping-typeofping #create-ping-typeofping-inner {
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
+}
+#create-ping-page #create-ping-wheelcontainer #create-ping-wheel #create-ping-question #create-ping-typeofping p {
   text-align: center;
+  font-size: 22px;
+  color: #fff;
   letter-spacing: 5px;
+  line-height: 60px;
+}
+#create-ping-page #create-ping-wheelcontainer #create-ping-wheel #create-ping-question #create-ping-typeofping .glyphicon {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
 }
 #create-ping-page #create-ping-wheelcontainer #create-ping-wheel textarea {
   font-size: 15px;
@@ -6788,17 +6825,57 @@ nav#top-nav #nav-right li {
   letter-spacing: 1.5px;
   color: #fff;
   position: absolute;
-  margin-top: 0;
   top: 50%;
   left: 50%;
   opacity: 0;
-  margin-left: -235px;
+  margin-left: -31%;
+  height: 100px;
+  margin-top: -50px;
   text-align: left;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(244, 244, 244, 0.1);
-  padding: 10px;
-  width: 450px;
-  border-radius: 0;
+  padding: 1%;
+  width: 62%;
+  border-radius: 8px 8px 8px 8px;
+}
+#create-ping-page #create-ping-wheelcontainer #create-ping-wheel .createping-sendping {
+  display: none;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  margin-left: -75px;
+  height: 20px;
+  font-size: 18px;
+  letter-spacing: 3px;
+  line-height: 20px;
+  text-decoration: none;
+  width: 150px;
+  padding: 64px 0;
+  text-align: center;
+  color: #fff;
+  background: url(../Images/Ping-emotion-stars.svg) no-repeat;
+  -webkit-background-size: 150px 3300px;
+  -o-background-size: 150px 3300px;
+  -moz-background-size: 150px 3300px;
+  background-size: 150px 3300px;
+}
+.createping-wheel-image g {
+  cursor: pointer;
+}
+.createping-wheel-image text {
+  display: none;
+}
+.createping-wheel-image .createping-wheel-selected {
+  opacity: 1 !important;
+}
+.createping-wheel-image .createping-wheel-notselected {
+  opacity: .4 !important;
+}
+#createping-text-3 {
+  display: none;
+}
+.createping-wheel-image :hover #createping-text-3 {
+  display: block;
 }
 @font-face {
   font-family: BebasNeue-webfont;

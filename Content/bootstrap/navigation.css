@@ -658,6 +658,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background: url(../Images/map-temp.jpg) no-repeat;
 }
 nav#top-nav.nav-tab-persona .nav-side {
   border-bottom: rgba(0, 0, 0, 0.9) solid 1px;
