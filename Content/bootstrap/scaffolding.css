@@ -1,9 +1,54 @@
-﻿@font-face {
-  font-family: 'bebas_neueregular';
-  src: url('Content/fonts/BebasNeue-webfont.eot');
-  src: url('Content/fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'), url('Content/fonts/BebasNeue-webfont.woff') format('woff'), url('Content/fonts/BebasNeue-webfont.ttf') format('truetype'), url('Content/fonts/BebasNeue-webfont.svg#bebas_neueregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+﻿.background-cover {
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.off-white-gradient {
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e1e1e1 80%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #e1e1e1 80%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe1e1e1', GradientType=0);
+}
+.off-grey-gradient {
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f5f5f5 80%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 80%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff5f5f5', GradientType=0);
+}
+.darktolight {
+  color: #555555;
+}
+.darktolight:hover {
+  color: #222222;
+}
+.whitetodark {
+  color: #999999;
+}
+.whitetodark:hover {
+  color: #eeeeee;
+}
+.lighttext {
+  color: #fff;
+}
+.link-style {
+  line-height: 25px;
+  border-bottom: 1px solid #428bca;
+  color: #428bca;
+  text-decoration: none;
+}
+.link-style:hover {
+  border-bottom: 1px dotted #428bca;
+}
+.button-style {
+  opacity: 1;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.button-style:hover {
+  opacity: 0.7;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 * {
   -webkit-box-sizing: border-box;
@@ -21,8 +66,8 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "bebas_neueregular", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-family: BebasNeue-webfont, sans-serif;
+  font-size: 15px;
   line-height: 1.42857143;
   color: #333333;
   background-color: #ffffff;
@@ -34,6 +79,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  letter-spacing: 1px;
 }
 a {
   color: #428bca;
@@ -79,8 +125,8 @@ img {
   border-radius: 50%;
 }
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 21px;
+  margin-bottom: 21px;
   border: 0;
   border-top: 1px solid #eeeeee;
 }

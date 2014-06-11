@@ -40,20 +40,20 @@
     }
 }
 
-    #persona-container.persona-closed {
+#persona-container.persona-closed {
 
-        .persona-close-tab {
-            display: none;
-        }
+    .persona-close-tab {
+        display: none;
     }
+}
 
-    #persona-container.persona-open {
-        z-index: 55;
+#persona-container.persona-open {
+    z-index: 55;
 
-        .persona-open-tab {
-            display: none;
-        }
+    .persona-open-tab {
+        display: none;
     }
+}
 
 #persona-user-container {
     position: absolute;
@@ -277,7 +277,163 @@
     }
 }
 
+// Persona FORMS
+.nano {
+}
 
+// NOT LOGGED IN
+#persona-container .persona-notloggedin {
+    #persona-user {
+        width: 160px;
+        height: 160px;
+        .border-radius(0);
+        overflow: hidden;
+        margin: 0;
+    }
+}
+
+#persona-container.persona-open .persona-notloggedin {
+    #persona-user-container {
+        margin-top: 94px;
+    }
+}
+
+.persona-forms {
+    position: absolute;
+    top: 250px;
+    left: 10%;
+    right: 10%;
+    bottom: 0;
+    text-align: center;
+
+    h5 {
+        .handwrittenfont;
+        margin-bottom: 60px;
+        line-height: 30px;
+    }
+
+    .persona-forms-btmlinks {
+        .handwrittenfont;
+        padding-top: 60px;
+        width: 100%;
+        text-align: center;
+        clear: both;
+        color: @brand-primary;
+
+        a {
+            margin: 0 15px;
+            .link-style;
+            line-height: 45px;
+        }
+    }
+
+    .form-center {
+        width: 350px;
+        float: none;
+        margin: 0 auto;
+    }
+
+    .form-left, .form-right {
+        width: 49%;
+    }
+
+    .form-left {
+        float: left;
+        border-right: 1px solid #ccc;
+    }
+
+    .form-right {
+        float: left;
+    }
+
+    .login-socialmedia {
+        height: 65px;
+        line-height: 65px;
+        padding: 0 15px 0 90px;
+        font-size: 20px;
+        color: #fff;
+        border: none;
+        float: right;
+        clear: right;
+        width: 350px;
+        text-align: center;
+        margin: 0 30px 10px 0;
+        letter-spacing: 1px;
+        .button-style;
+    }
+
+    .login-socialg {
+        background: url(../Images/social-media-googleplus.png) no-repeat 10px 0 #cc3433;
+    }
+
+    .login-socialfb {
+        background: url(../Images/social-media-facebook.png) no-repeat 10px 0 #4a6ea9;
+    }
+
+    .login-socialt {
+        background: url(../Images/social-media-twitter.png) no-repeat 10px 0 #28aae1;
+    }
+
+    form {
+        margin-left: 30px;
+
+        button {
+            line-height: 65px;
+            height: 65px;
+            float: left;
+            clear: left;
+            font-size: 20px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            box-shadow: none;
+            border-radius: 0;
+            background: #212121;
+            color: #fff;
+            border: none;
+            width: 350px;
+            .button-style;
+        }
+
+        input, input[type="password"], input[type="email"] {
+            height: 65px;
+            box-shadow: none;
+            border-radius: 0;
+            font-size: 20px;
+        }
+
+        .form-right-placeholders {
+            position: relative;
+            height: 65px;
+            float: left;
+            clear: left;
+            margin-bottom: 10px;
+
+            p {
+                font-size: 20px;
+                letter-spacing: 1px;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+
+            input[type="text"], input[type="email"] {
+                padding-left: 80px;
+                width: 350px;
+            }
+
+
+            input#confirm-password {
+                padding-left: 180px;
+                width: 350px;
+            }
+
+            input[type="password"] {
+                padding-left: 110px;
+                width: 350px;
+            }
+        }
+    }
+}
 
 // RESPONSIVE PERSONA
 
@@ -285,6 +441,18 @@
 
 // tablets-ish
 @media all and (min-width: 768px) and (max-width: 1024px) {
+    #persona-container .persona-notloggedin {
+        #persona-user {
+            width: 140px;
+            height: 140px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+
     #persona-user-container {
         top: -80px;
         margin-left: -70px;
@@ -299,15 +467,79 @@
 }
 
 // mobile-ish
+@media all and (max-width:850px) {
+
+
+    .persona-forms {
+        top: 200px;
+
+        .form-right-placeholders {
+            width: 100%;
+        }
+
+        .form-left {
+            border-right: none;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+
+            .login-socialmedia {
+                margin-right: 0;
+                float: none;
+            }
+        }
+
+        .form-right {
+            float: left;
+            clear: left;
+            width: 100%;
+
+            form {
+                margin-left: 0;
+
+                .form-right-placeholders {
+                    float: none;
+                    width: 100%;
+
+                    p {
+                        left: 50%;
+                        margin-left: -155px;
+                    }
+                }
+
+                button {
+                    float: none;
+                }
+            }
+        }
+    }
+}
+
+// mobile-ish
 @media all and (max-width:767px) {
 
+    #persona-container.persona-open .persona-notloggedin #persona-user-container {
+        top: -84px;
+    }
+
+    #persona-container .persona-notloggedin {
+        #persona-user {
+            width: 122px;
+            height: 122px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
 
     #persona-user-container {
         top: -86px;
         margin-left: -60px;
         width: 120px;
         height: 120px;
-        margin-top:84px;
+        margin-top: 84px;
 
         #persona-user {
             width: 80px;
@@ -318,5 +550,46 @@
     .persona-open-tab, .persona-close-tab {
         display: none;
     }
+}
 
+// mobile - small
+@media all and (max-width:450px) {
+    .persona-forms {
+
+        .form-center {
+            width: 100%;
+
+            input, button {
+                width: 100% !important;
+            }
+        }
+
+        .form-left {
+
+            .login-socialmedia {
+                width: 100%;
+            }
+        }
+
+        .form-right {
+
+            form {
+
+                .form-right-placeholders {
+                    input {
+                        width: 100% !important;
+                    }
+
+                    p {
+                        left: 20px;
+                        margin-left: 0;
+                    }
+                }
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }

@@ -1,0 +1,51 @@
+﻿//
+// Custom PingColor Styles
+// --
+
+@import "variables.less";
+@import "mixins.less";
+@import "glyphicons.less";
+@import "type.less";
+
+// *********** Persona **************
+
+#graphics-panel {
+    width: 300px;
+    padding: 0 10px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background-image: -webkit-gradient( linear, right bottom, left bottom, color-stop(0, #2B2B2B), color-stop(1, rgba(244, 244, 244, 0)) );
+    background-image: -o-linear-gradient(left, #2B2B2B 40%, rgba(244, 244, 244, 0) 100%);
+    background-image: -moz-linear-gradient(left, #2B2B2B 40%, rgba(244, 244, 244, 0) 100%);
+    background-image: -webkit-linear-gradient(left, #2B2B2B 40%, rgba(244, 244, 244, 0) 100%);
+    background-image: -ms-linear-gradient(left, #2B2B2B 40%, rgba(244, 244, 244, 0) 100%);
+    background-image: linear-gradient(to left, #2B2B2B 40%, rgba(244, 244, 244, 0) 100%);
+
+    .graphics-more {
+        display: none;
+    }
+}
+
+    #graphics-panel.graphics-open {
+        background-image: none;
+        background: rgba(43, 43, 43, 0.9);
+
+        .graphics-more {
+            display: block;
+            height: 100%;
+
+            img {
+                margin: 150px 0 0 100px;
+                height: 500px;
+            }
+        }
+    }
+.graphics-panel-container {
+    width:100%;
+    margin:2% auto;
+    height:24%;
+    border:1px solid rgba(244, 244, 244, 0.4);
+}

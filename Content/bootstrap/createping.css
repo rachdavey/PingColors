@@ -1,4 +1,10 @@
-﻿.off-white-gradient {
+﻿.background-cover {
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.off-white-gradient {
   background-image: -webkit-linear-gradient(top, #ffffff 0%, #e1e1e1 80%);
   background-image: linear-gradient(to bottom, #ffffff 0%, #e1e1e1 80%);
   background-repeat: repeat-x;
@@ -25,11 +31,24 @@
 .lighttext {
   color: #fff;
 }
-.background-cover {
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
+.link-style {
+  line-height: 25px;
+  border-bottom: 1px solid #428bca;
+  color: #428bca;
+  text-decoration: none;
+}
+.link-style:hover {
+  border-bottom: 1px dotted #428bca;
+}
+.button-style {
+  opacity: 1;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.button-style:hover {
+  opacity: 0.7;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
@@ -680,6 +699,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  letter-spacing: 1px;
 }
 a {
   color: #428bca;

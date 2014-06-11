@@ -1,3 +1,9 @@
+﻿.background-cover {
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
 .off-white-gradient {
   background-image: -webkit-linear-gradient(top, #ffffff 0%, #e1e1e1 80%);
   background-image: linear-gradient(to bottom, #ffffff 0%, #e1e1e1 80%);
@@ -25,11 +31,24 @@
 .lighttext {
   color: #fff;
 }
-.background-cover {
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
+.link-style {
+  line-height: 25px;
+  border-bottom: 1px solid #428bca;
+  color: #428bca;
+  text-decoration: none;
+}
+.link-style:hover {
+  border-bottom: 1px dotted #428bca;
+}
+.button-style {
+  opacity: 1;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.button-style:hover {
+  opacity: 0.7;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
@@ -314,6 +333,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  letter-spacing: 1px;
 }
 a {
   color: #428bca;
@@ -5838,6 +5858,7 @@ body {
   margin: 0;
   padding: 0;
   background: url(../Images/map-temp.jpg) no-repeat;
+  min-width: 400px;
 }
 nav#top-nav.nav-tab-persona .nav-side {
   border-bottom: rgba(0, 0, 0, 0.9) solid 1px;
@@ -6330,42 +6351,6 @@ nav#top-nav #nav-right li {
   -ms-transform-origin: 0 135px;
   transform-origin: 0 135px;
 }
-#graphics-panel {
-  width: 300px;
-  padding: 0 10px;
-  position: absolute;
-  top: 50px;
-  right: 0;
-  bottom: 0;
-  z-index: 50;
-  background-image: -webkit-gradient(linear, right bottom, left bottom, color-stop(0, #2b2b2b), color-stop(1, rgba(244, 244, 244, 0)));
-  background-image: -o-linear-gradient(left, #2b2b2b 40%, rgba(244, 244, 244, 0) 100%);
-  background-image: -moz-linear-gradient(left, #2b2b2b 40%, rgba(244, 244, 244, 0) 100%);
-  background-image: -webkit-linear-gradient(left, #2b2b2b 40%, rgba(244, 244, 244, 0) 100%);
-  background-image: -ms-linear-gradient(left, #2b2b2b 40%, rgba(244, 244, 244, 0) 100%);
-  background-image: linear-gradient(to left, #2b2b2b 40%, rgba(244, 244, 244, 0) 100%);
-}
-#graphics-panel img {
-  margin: 0 auto;
-  max-width: 100%;
-  height: 100%;
-  float: left;
-}
-#graphics-panel .graphics-more {
-  display: none;
-}
-#graphics-panel.graphics-open {
-  background-image: none;
-  background: rgba(43, 43, 43, 0.9);
-}
-#graphics-panel.graphics-open .graphics-more {
-  display: block;
-  height: 100%;
-}
-#graphics-panel.graphics-open .graphics-more img {
-  margin: 150px 0 0 100px;
-  height: 500px;
-}
 #map-filters {
   position: fixed;
   bottom: 50%;
@@ -6717,7 +6702,172 @@ nav#top-nav #nav-right li {
 #timeline-container .timeline-item.timeline-item-left .ping-emotion-icon {
   right: -25px;
 }
+#persona-container .persona-notloggedin #persona-user {
+  width: 160px;
+  height: 160px;
+  border-radius: 0 0 0 0;
+  overflow: hidden;
+  margin: 0;
+}
+#persona-container.persona-open .persona-notloggedin #persona-user-container {
+  margin-top: 94px;
+}
+.persona-forms {
+  position: absolute;
+  top: 250px;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  text-align: center;
+}
+.persona-forms h5 {
+  font-family: 'Bad Script', cursive;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  letter-spacing: 1.5px;
+  margin-bottom: 60px;
+  line-height: 30px;
+}
+.persona-forms .persona-forms-btmlinks {
+  font-family: 'Bad Script', cursive;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  letter-spacing: 1.5px;
+  padding-top: 60px;
+  width: 100%;
+  text-align: center;
+  clear: both;
+  color: #428bca;
+}
+.persona-forms .persona-forms-btmlinks a {
+  margin: 0 15px;
+  line-height: 25px;
+  border-bottom: 1px solid #428bca;
+  color: #428bca;
+  text-decoration: none;
+  line-height: 45px;
+}
+.persona-forms .persona-forms-btmlinks a:hover {
+  border-bottom: 1px dotted #428bca;
+}
+.persona-forms .form-center {
+  width: 350px;
+  float: none;
+  margin: 0 auto;
+}
+.persona-forms .form-left,
+.persona-forms .form-right {
+  width: 49%;
+}
+.persona-forms .form-left {
+  float: left;
+  border-right: 1px solid #ccc;
+}
+.persona-forms .form-right {
+  float: left;
+}
+.persona-forms .login-socialmedia {
+  height: 65px;
+  line-height: 65px;
+  padding: 0 15px 0 90px;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  float: right;
+  clear: right;
+  width: 350px;
+  text-align: center;
+  margin: 0 30px 10px 0;
+  letter-spacing: 1px;
+  opacity: 1;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.persona-forms .login-socialmedia:hover {
+  opacity: 0.7;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.persona-forms .login-socialg {
+  background: url(../Images/social-media-googleplus.png) no-repeat 10px 0 #cc3433;
+}
+.persona-forms .login-socialfb {
+  background: url(../Images/social-media-facebook.png) no-repeat 10px 0 #4a6ea9;
+}
+.persona-forms .login-socialt {
+  background: url(../Images/social-media-twitter.png) no-repeat 10px 0 #28aae1;
+}
+.persona-forms form {
+  margin-left: 30px;
+}
+.persona-forms form button {
+  line-height: 65px;
+  height: 65px;
+  float: left;
+  clear: left;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  box-shadow: none;
+  border-radius: 0;
+  background: #212121;
+  color: #fff;
+  border: none;
+  width: 350px;
+  opacity: 1;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.persona-forms form button:hover {
+  opacity: 0.7;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.persona-forms form input,
+.persona-forms form input[type="password"],
+.persona-forms form input[type="email"] {
+  height: 65px;
+  box-shadow: none;
+  border-radius: 0;
+  font-size: 20px;
+}
+.persona-forms form .form-right-placeholders {
+  position: relative;
+  height: 65px;
+  float: left;
+  clear: left;
+  margin-bottom: 10px;
+}
+.persona-forms form .form-right-placeholders p {
+  font-size: 20px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.persona-forms form .form-right-placeholders input[type="text"],
+.persona-forms form .form-right-placeholders input[type="email"] {
+  padding-left: 80px;
+  width: 350px;
+}
+.persona-forms form .form-right-placeholders input#confirm-password {
+  padding-left: 180px;
+  width: 350px;
+}
+.persona-forms form .form-right-placeholders input[type="password"] {
+  padding-left: 110px;
+  width: 350px;
+}
 @media all and (min-width: 768px) and (max-width: 1024px) {
+  #persona-container .persona-notloggedin #persona-user {
+    width: 140px;
+    height: 140px;
+  }
+  #persona-container .persona-notloggedin #persona-user img {
+    width: 100%;
+  }
   #persona-user-container {
     top: -80px;
     margin-left: -70px;
@@ -6729,7 +6879,55 @@ nav#top-nav #nav-right li {
     height: 100px;
   }
 }
+@media all and (max-width: 850px) {
+  .persona-forms {
+    top: 200px;
+  }
+  .persona-forms .form-right-placeholders {
+    width: 100%;
+  }
+  .persona-forms .form-left {
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .persona-forms .form-left .login-socialmedia {
+    margin-right: 0;
+    float: none;
+  }
+  .persona-forms .form-right {
+    float: left;
+    clear: left;
+    width: 100%;
+  }
+  .persona-forms .form-right form {
+    margin-left: 0;
+  }
+  .persona-forms .form-right form .form-right-placeholders {
+    float: none;
+    width: 100%;
+  }
+  .persona-forms .form-right form .form-right-placeholders p {
+    left: 50%;
+    margin-left: -155px;
+  }
+  .persona-forms .form-right form button {
+    float: none;
+  }
+}
 @media all and (max-width: 767px) {
+  #persona-container.persona-open .persona-notloggedin #persona-user-container {
+    top: -84px;
+  }
+  #persona-container .persona-notloggedin #persona-user {
+    width: 122px;
+    height: 122px;
+  }
+  #persona-container .persona-notloggedin #persona-user img {
+    width: 100%;
+  }
   #persona-user-container {
     top: -86px;
     margin-left: -60px;
@@ -6744,6 +6942,28 @@ nav#top-nav #nav-right li {
   .persona-open-tab,
   .persona-close-tab {
     display: none;
+  }
+}
+@media all and (max-width: 450px) {
+  .persona-forms .form-center {
+    width: 100%;
+  }
+  .persona-forms .form-center input,
+  .persona-forms .form-center button {
+    width: 100% !important;
+  }
+  .persona-forms .form-left .login-socialmedia {
+    width: 100%;
+  }
+  .persona-forms .form-right form .form-right-placeholders input {
+    width: 100% !important;
+  }
+  .persona-forms .form-right form .form-right-placeholders p {
+    left: 20px;
+    margin-left: 0;
+  }
+  .persona-forms .form-right form button {
+    width: 100%;
   }
 }
 .dark-background {
@@ -6870,6 +7090,42 @@ nav#top-nav #nav-right li {
 }
 .createping-wheel-image .createping-wheel-notselected {
   opacity: .4 !important;
+}
+#graphics-panel {
+  width: 300px;
+  padding: 0 10px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background-image: -webkit-gradient(linear, right bottom, left bottom, color-stop(0, #2b2b2b), color-stop(1, rgba(244, 244, 244, 0)));
+  background-image: -o-linear-gradient(left, #2b2b2b 40%, rgba(244, 244, 244, 0) 100%);
+  background-image: -moz-linear-gradient(left, #2b2b2b 40%, rgba(244, 244, 244, 0) 100%);
+  background-image: -webkit-linear-gradient(left, #2b2b2b 40%, rgba(244, 244, 244, 0) 100%);
+  background-image: -ms-linear-gradient(left, #2b2b2b 40%, rgba(244, 244, 244, 0) 100%);
+  background-image: linear-gradient(to left, #2b2b2b 40%, rgba(244, 244, 244, 0) 100%);
+}
+#graphics-panel .graphics-more {
+  display: none;
+}
+#graphics-panel.graphics-open {
+  background-image: none;
+  background: rgba(43, 43, 43, 0.9);
+}
+#graphics-panel.graphics-open .graphics-more {
+  display: block;
+  height: 100%;
+}
+#graphics-panel.graphics-open .graphics-more img {
+  margin: 150px 0 0 100px;
+  height: 500px;
+}
+.graphics-panel-container {
+  width: 100%;
+  margin: 2% auto;
+  height: 24%;
+  border: 1px solid rgba(244, 244, 244, 0.4);
 }
 #createping-text-3 {
   display: none;

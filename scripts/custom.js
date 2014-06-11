@@ -8,10 +8,67 @@
         toggleGraphicsPanel();
         togglePingBubble();
         toggleCreatePing();
+        runAjaxNotLoggedIn();
+    };
+
+    // fetches the persona content if user is not logged in
+    var runAjaxNotLoggedIn = function () {
+        $(".persona-innercontainer").children().detach();
+        $("#persona-notloggedin").load("notloggedin.html", function () {
+            toggleOpenPersonaArrows();
+            runAjaxRegister();
+            runAjaxForgotPassword();
+            redeployNanoScrollbars();
+        });      
+    };
+    var runAjaxLogin = function () {
+        $('#loginLink').click(function () {
+            $(".persona-innercontainer").children().detach();
+            $("#persona-notloggedin").load("notloggedin.html", function () {
+                toggleOpenPersonaArrows();
+                runAjaxRegister();
+                runAjaxForgotPassword();
+                redeployNanoScrollbars();
+            });
+        });
+    };
+
+    // fetches the persona content if user is not logged in
+    var runAjaxRegister = function () {
+        $('#registerLink').click(function () {
+            $(".persona-innercontainer").children().detach();
+            $("#persona-register").load("register.html", function () {
+                toggleOpenPersonaArrows();
+                runAjaxForgotPassword();
+                runAjaxLogin();
+                redeployNanoScrollbars();
+            });
+        });
+    };
+
+    // fetches the persona content for forgot password
+    var runAjaxForgotPassword = function () {
+        $('#forgotPasswordLink').click(function () {
+            $(".persona-innercontainer").children().detach();
+            $("#persona-forgotpassword").load("forgotpassword.html", function () {
+                toggleOpenPersonaArrows();
+                runAjaxRegister();
+                runAjaxLogin();
+                redeployNanoScrollbars();
+            });
+        });
+    };
+
+    var redeployNanoScrollbars = function () {
+        $(".nano").nanoScroller();
+        $(".nano").nanoScroller({ destroy: true });
     };
 
 
-
+    var toggleOpenPersonaArrows = function () {
+        $('.persona-open-tab, #persona-user-container').click(personaPanelOpen);
+        $('.persona-close-tab').click(personaPanelClose);
+    };
 
     $('#create-ping-container, .createping-sendping').click(function () {
         toggleCreatePing()
@@ -228,8 +285,6 @@
     };
 
     $('.nav-persona-icon').click(personaPanelOpen);
-    $('.persona-open-tab').click(personaPanelOpen);
-    $('.persona-close-tab').click(personaPanelClose);
 
 
     return {

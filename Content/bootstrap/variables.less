@@ -44,8 +44,30 @@
 }
 
 .lighttext {
-    color:#fff;
+    color: #fff;
 }
+
+.link-style {
+    line-height: 25px;
+    border-bottom: 1px solid @brand-primary;
+    color: @brand-primary;
+    text-decoration: none;
+
+    &:hover {
+        border-bottom: 1px dotted @brand-primary;
+    }
+}
+
+.button-style {
+    opacity: 1;
+    .transition(all 1s ease-in-out);
+
+    &:hover {
+        opacity: 0.7;
+        .transition(all 1s ease-in-out);
+    }
+}
+
 
 
 //== Scaffolding
@@ -73,7 +95,7 @@
 // Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base: @font-family-sans-serif;
-@letter-spacing-sans-serif:5px;
+@letter-spacing-sans-serif: 5px;
 
 @font-size-base: 15px;
 @font-size-large: ceil((@font-size-base * 1.25)); // ~18px
